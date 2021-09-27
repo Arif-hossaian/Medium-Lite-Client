@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Container } from '@mui/material';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
+import PageRender from './PageRender';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Header />
+        <Container>
+          <Switch>
+            <Route exact path="/" component={PageRender} />
+            <Route exact path="/:page" component={PageRender} />
+            <Route exact path="/:page/:slug" component={PageRender} />
+          </Switch>
+          <Footer />
+        </Container>
+      </Router>
+    </>
   );
-}
+};
 
 export default App;
