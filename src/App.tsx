@@ -1,5 +1,6 @@
 import { Container } from '@mui/material';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Alert from './components/Alert/Alert';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import PageRender from './PageRender';
@@ -8,6 +9,7 @@ const App = () => {
   return (
     <>
       <Router>
+        <Alert />
         <Header />
         <Container>
           <Switch>
